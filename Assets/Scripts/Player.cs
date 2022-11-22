@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     RaycastHit hit;
     LineRenderer lineRenderer;
     public GameObject compass;
+    public GameObject gameManager;
     private float speed = 10f;
     private string state = "Still";
     private Vector3 upVector = new Vector3(0, 0, 1);
@@ -35,6 +36,7 @@ public class Player : MonoBehaviour
                 lineRenderer.endColor = Color.red;
                 if (Input.GetMouseButtonDown(0)) 
                 {
+                    gameManager.GetComponent<GameManager>().switchCubeStates();
                     state = hit.collider.name.Remove(hit.collider.name.Length - 4);
                     lineRenderer.startColor = Color.white;
                     lineRenderer.endColor = Color.white;
