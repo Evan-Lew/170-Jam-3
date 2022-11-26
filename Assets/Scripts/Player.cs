@@ -102,6 +102,7 @@ public class Player : MonoBehaviour
         compass.SetActive(true);
         transform.position = new Vector3(MathF.Round(transform.position.x), MathF.Round(transform.position.y), MathF.Round(transform.position.z));
     }
+    
     private void RotateVectors(Vector3 axis) {
         upVector = Quaternion.AngleAxis(90, axis) * upVector;
         downVector = Quaternion.AngleAxis(90, axis) * downVector;

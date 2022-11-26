@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class SwitchCube : MonoBehaviour
         switchColor();
     }
 
+    // Colliding with red resets scene
     private void OnTriggerEnter(Collider other)
     {
         if (state)
