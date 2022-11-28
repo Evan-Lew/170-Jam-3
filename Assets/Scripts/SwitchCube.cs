@@ -8,6 +8,7 @@ public class SwitchCube : MonoBehaviour
 {
 
     public bool state;
+    public bool goal;
 
     void Start()
     {
@@ -20,6 +21,14 @@ public class SwitchCube : MonoBehaviour
         if (state)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        // Load next level once goal has been met
+        if (goal)
+        {
+            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            int nextSceneIndex = currentSceneIndex + 1;
+            SceneManager.LoadScene(nextSceneIndex);
         }
     }
 
