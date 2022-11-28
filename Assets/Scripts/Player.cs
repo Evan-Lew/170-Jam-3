@@ -36,6 +36,12 @@ public class Player : MonoBehaviour
         
         if (state == "Still") 
         {
+            // Disable the compass if the player has died or won
+            if (SwitchCube.playerAlive == false || SwitchCube.playerWon)
+            {
+                compass.SetActive(false);
+            }
+            
             int layer_mask = LayerMask.GetMask("Compass");
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, Mathf.Infinity, layer_mask))
