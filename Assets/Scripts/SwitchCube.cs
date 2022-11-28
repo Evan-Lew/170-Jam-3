@@ -14,10 +14,10 @@ public class SwitchCube : MonoBehaviour
     {
         switchColor();
     }
-
-    // Colliding with red resets scene
+    
     private void OnTriggerEnter(Collider other)
     {
+        // Colliding with red resets the scene
         if (state)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);

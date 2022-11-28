@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -22,20 +24,30 @@ public class Player : MonoBehaviour
     private Vector3 forward = Vector3.forward;
     private Vector3 back = Vector3.back;
 
+    // Time based variables
+    private float timer;
+    private float temp_time;
+    [SerializeField] private float time_to_die;
+    
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
+        
         if (state == "Still") 
         {
             int layer_mask = LayerMask.GetMask("Compass");
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if(Physics.Raycast(ray, out hit, Mathf.Infinity, layer_mask))
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, layer_mask))
             {
                 lineRenderer = GameObject.Find("/PlayerCube/Compass/" + hit.collider.name).GetComponent<LineRenderer>();
                 lineRenderer.startColor = Color.red;
                 lineRenderer.endColor = Color.red;
                 if (Input.GetMouseButtonDown(0)) 
                 {
+                    // Assign the time the player starts to move
+                    temp_time = timer;
+
                     gameManager.GetComponent<GameManager>().switchCubeStates();
                     state = hit.collider.name.Remove(hit.collider.name.Length - 4);
                     lineRenderer.startColor = Color.white;
@@ -47,6 +59,15 @@ public class Player : MonoBehaviour
             {
                 lineRenderer.startColor = Color.white;
                 lineRenderer.endColor = Color.white;
+            }
+        }
+        // Player is moving state
+        else
+        {
+            // Check if the player is moving too long before hitting a block
+            if (timer > temp_time + time_to_die)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
 
