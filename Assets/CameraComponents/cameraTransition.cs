@@ -32,7 +32,7 @@ public class cameraTransition : MonoBehaviour
         actionDown.performed += _ => moveCamDown();
     }
 
-    private void moveCamLeft()
+    public void moveCamLeft()
     {
         pos += 1;
         if (pos > 3)
@@ -41,8 +41,8 @@ public class cameraTransition : MonoBehaviour
         }
         animator.SetFloat("Pos", pos);
     }
-    
-    private void moveCamRight()
+
+    public void moveCamRight()
     {
         pos -= 1;
         if (pos < 0)
@@ -52,16 +52,15 @@ public class cameraTransition : MonoBehaviour
         animator.SetFloat("Pos", pos);
     }
 
-    private void moveCamUp()
+    public void moveCamUp()
     {
         animator.SetBool("IsTopLayer", true);
     }
 
-    private void moveCamDown()
+    public void moveCamDown()
     {
         animator.SetBool("IsTopLayer", false);
     }
-
 
     // Update is called once per frame
     void Update()
