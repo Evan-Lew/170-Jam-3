@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject[] switchCubes;
     public GameObject[] disappearCubes;
+    public GameObject[] killCubes;
     
     // Global variables
     static public bool playerAlive;
