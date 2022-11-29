@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 273382291}
   - component: {fileID: 273382290}
   - component: {fileID: 273382289}
-  - component: {fileID: 273382288}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -143,20 +142,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &273382288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 273382287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75c445dfb96e34a4bb1c7491cd6b28ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  state: 1
-  goal: 0
 --- !u!65 &273382289
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -422,6 +407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   goal: 0
+  gameManager: {fileID: 1342647050}
 --- !u!65 &359252170
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -733,6 +719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 1
   goal: 0
+  gameManager: {fileID: 1342647050}
 --- !u!1001 &616587453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -934,7 +921,6 @@ GameObject:
   - component: {fileID: 1291353102}
   - component: {fileID: 1291353101}
   - component: {fileID: 1291353100}
-  - component: {fileID: 1291353099}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Untagged
@@ -942,20 +928,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1291353099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1291353098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75c445dfb96e34a4bb1c7491cd6b28ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  state: 1
-  goal: 0
 --- !u!65 &1291353100
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1046,7 +1018,7 @@ GameObject:
   - component: {fileID: 1342647050}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1066,10 +1038,11 @@ MonoBehaviour:
   switchCubes:
   - {fileID: 486533864}
   - {fileID: 359252168}
+  - {fileID: 1960116838}
+  disappearCubes:
   - {fileID: 273382287}
   - {fileID: 2029543452}
   - {fileID: 1291353098}
-  - {fileID: 1960116838}
 --- !u!4 &1342647051
 Transform:
   m_ObjectHideFlags: 0
@@ -1199,6 +1172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   goal: 0
+  gameManager: {fileID: 1342647050}
 --- !u!65 &1960116840
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1289,7 +1263,7 @@ GameObject:
   - component: {fileID: 2029543456}
   - component: {fileID: 2029543455}
   - component: {fileID: 2029543454}
-  - component: {fileID: 2029543453}
+  - component: {fileID: 2029543458}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -1297,20 +1271,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2029543453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2029543452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75c445dfb96e34a4bb1c7491cd6b28ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  state: 0
-  goal: 1
 --- !u!65 &2029543454
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1389,6 +1349,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2029543458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029543452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56dec0b82d4945043b0c5b3820d3ebd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 0
+  goal: 1
+  gameManager: {fileID: 1342647050}
 --- !u!1001 &2575863460868427282
 PrefabInstance:
   m_ObjectHideFlags: 0

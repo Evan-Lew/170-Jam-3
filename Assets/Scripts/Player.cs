@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
         if (state == "Still") 
         {
             // Disable the compass if the player has died or won
-            if (SwitchCube.playerAlive == false || SwitchCube.playerWon)
+            if (GameManager.playerAlive == false || GameManager.playerWon)
             {
                 compass.SetActive(false);
             }
