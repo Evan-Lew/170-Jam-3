@@ -38,6 +38,8 @@ public class DisappearCube : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+        gameManager.playSlimeJump();
+        
         if (disappearState)
         {
             disappearUpdate = true;

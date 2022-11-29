@@ -15,6 +15,8 @@ public class KillCube : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+        gameManager.playSlimeJump();
+        
         if (killState)
         {
             GameManager.playerAlive = false;

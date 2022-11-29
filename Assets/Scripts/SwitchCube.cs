@@ -19,6 +19,8 @@ public class SwitchCube : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+        gameManager.playSlimeJump();
+        
         if (state)
         {
             GameManager.playerAlive = false;

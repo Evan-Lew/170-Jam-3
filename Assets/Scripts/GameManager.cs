@@ -13,6 +13,14 @@ public class GameManager : MonoBehaviour
     static public bool playerAlive;
     static public bool playerWon;
 
+    // Sound effects
+    public AudioSource slimeJump;
+
+    public void playSlimeJump()
+    {
+        slimeJump.Play();
+    }
+    
     public void switchCubeStates() {
         foreach (GameObject cube in switchCubes)
         {
