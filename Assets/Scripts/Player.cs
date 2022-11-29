@@ -26,8 +26,8 @@ public class Player : MonoBehaviour
 
     // Time based variables
     private float timer;
-    private float temp_time;
-    [SerializeField] private float time_to_die;
+    private float tempTime;
+    [SerializeField] private float timeToDie;
     
     // Update is called once per frame
     void Update()
@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
                 if (Input.GetMouseButtonDown(0)) 
                 {
                     // Assign the time the player starts to move
-                    temp_time = timer;
+                    tempTime = timer;
 
                     gameManager.GetComponent<GameManager>().switchCubeStates();
                     state = hit.collider.name.Remove(hit.collider.name.Length - 4);
@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
         else
         {
             // Check if the player is moving too long before hitting a block
-            if (timer > temp_time + time_to_die)
+            if (timer > tempTime + timeToDie)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }

@@ -604,9 +604,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75c445dfb96e34a4bb1c7491cd6b28ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 1
-  goal: 0
   gameManager: {fileID: 1342647050}
+  goal: 0
+  state: 1
 --- !u!1001 &616587453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -708,6 +708,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: moveCamDown
+      objectReference: {fileID: 0}
+    - target: {fileID: 7049710932623489377, guid: 458c4d905604be2449fa1a8432ed5fff,
+        type: 3}
+      propertyPath: timeToDie
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7049710932623489377, guid: 458c4d905604be2449fa1a8432ed5fff,
         type: 3}
@@ -901,9 +906,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75c445dfb96e34a4bb1c7491cd6b28ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 0
-  goal: 0
   gameManager: {fileID: 1342647050}
+  goal: 0
+  state: 0
 --- !u!1 &1304335235
 GameObject:
   m_ObjectHideFlags: 0

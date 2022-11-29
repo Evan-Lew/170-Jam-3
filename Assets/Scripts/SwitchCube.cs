@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class SwitchCube : MonoBehaviour
 {
-    public bool state;
-    public bool goal;
     public GameManager gameManager;
+    public bool goal;
+    public bool state;   
 
     void Start()
     {
