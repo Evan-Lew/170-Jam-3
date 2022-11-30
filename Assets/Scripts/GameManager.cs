@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour
     public GameObject[] killCubes;
     
     // Global variables
-    static public bool playerAlive;
-    static public bool playerWon;
+    static public bool playerAlive = true;
+    static public bool playerWon = false;
 
     // Sound effects
     public AudioSource slimeLand;
