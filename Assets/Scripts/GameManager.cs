@@ -14,11 +14,23 @@ public class GameManager : MonoBehaviour
     static public bool playerWon;
 
     // Sound effects
-    public AudioSource slimeJump;
+    public AudioSource slimeLand;
+    public AudioSource slimeDeath;
+    public AudioSource goalSfx;
 
-    public void playSlimeJump()
+    public void playSlimeLand()
     {
-        slimeJump.Play();
+        slimeLand.Play();
+    }
+
+    public void playSlimeDeath()
+    {
+        slimeDeath.Play();
+    }
+
+    public void playGoalSfx()
+    {
+        goalSfx.Play();
     }
     
     public void switchCubeStates() {

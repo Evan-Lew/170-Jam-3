@@ -19,10 +19,11 @@ public class SwitchCube : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        gameManager.playSlimeJump();
+        gameManager.playSlimeLand();
         
         if (state)
         {
+            gameManager.playSlimeDeath();
             GameManager.playerAlive = false;
             gameManager.Invoke("resetPlayer", 1f);
         }
@@ -30,6 +31,7 @@ public class SwitchCube : MonoBehaviour
         
         if (goal)
         {
+            gameManager.playGoalSfx();
             GameManager.playerWon = true;
             gameManager.Invoke("winPlayer", 1f);
         }

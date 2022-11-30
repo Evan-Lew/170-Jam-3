@@ -29,7 +29,12 @@ public class Player : MonoBehaviour
     private float tempTime;
     [SerializeField] private float timeToDie;
 
-
+    // Sound effects
+    public AudioSource slimeJump;
+    public AudioSource slimeDissolve;
+    private bool dissolvePlayed = false;
+    [SerializeField] private float dissolveTime;
+    
     //dealing with rotations
     private Transform playerRot;
     private Transform playerFacing;
@@ -64,6 +69,8 @@ public class Player : MonoBehaviour
                 lineRenderer.endColor = Color.red;
                 if (Input.GetMouseButtonDown(0)) 
                 {
+                    slimeJump.Play();
+                    
                     // Assign the time the player starts to move
                     tempTime = timer;
 
@@ -94,9 +101,17 @@ public class Player : MonoBehaviour
         // Player is moving state
         else
         {
+            // Play the dissolving sfx
+            if (timer > tempTime + timeToDie - dissolveTime && dissolvePlayed == false)
+            {
+                slimeDissolve.Play();
+                dissolvePlayed = true;
+            }
+
             // Check if the player is moving too long before hitting a block
             if (timer > tempTime + timeToDie)
             {
+                dissolvePlayed = false;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
 

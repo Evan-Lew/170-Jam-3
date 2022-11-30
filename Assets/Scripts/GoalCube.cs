@@ -9,7 +9,8 @@ public class GoalCube : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        gameManager.playSlimeJump();
+        gameManager.playGoalSfx();
+        gameManager.playSlimeLand();
         
         if (goal)
         {
