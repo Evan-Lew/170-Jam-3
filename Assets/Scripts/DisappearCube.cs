@@ -38,16 +38,18 @@ public class DisappearCube : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        gameManager.playSlimeJump();
+        gameManager.playSlimeLand();
         
         if (disappearState)
         {
+            gameManager.playDisappearSfx();
             disappearUpdate = true;
             disappearCubeTimer = timer;
         }
         
         if (goal)
         {
+            gameManager.playGoalSfx();
             GameManager.playerWon = true;
             gameManager.Invoke("winPlayer", 1f);
         }

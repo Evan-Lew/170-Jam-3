@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Cinemachine;
 
 public class UIArrowBehavior : MonoBehaviour
 {
     // Start is called before the first frame update
     private RawImage image;
+    
 
 
     void Start()
     {
         image = GetComponent<RawImage>();
+        
     }
 
     public void mouseHoverEnter()
@@ -48,4 +51,6 @@ public class UIArrowBehavior : MonoBehaviour
         tempColor.a = 1f;
         image.color = tempColor;
     }
+
+    
 }

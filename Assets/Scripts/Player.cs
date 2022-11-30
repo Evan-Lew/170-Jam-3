@@ -28,7 +28,25 @@ public class Player : MonoBehaviour
     private float timer;
     private float tempTime;
     [SerializeField] private float timeToDie;
+
+    // Sound effects
+    public AudioSource slimeJump;
+    public AudioSource slimeDissolve;
+    private bool dissolvePlayed = false;
+    [SerializeField] private float dissolveTime;
     
+    //dealing with rotations
+    private Transform playerRot;
+    private Transform playerFacing;
+
+    private bool firstMove = false;
+
+    private void Awake()
+    {
+        //gather children
+        playerRot = transform.Find("SlimePos");
+        playerFacing = playerRot.Find("SlimeFacing");
+    }
     // Update is called once per frame
     void Update()
     {
@@ -51,6 +69,8 @@ public class Player : MonoBehaviour
                 lineRenderer.endColor = Color.red;
                 if (Input.GetMouseButtonDown(0)) 
                 {
+                    slimeJump.Play();
+                    
                     // Assign the time the player starts to move
                     tempTime = timer;
 
@@ -66,41 +86,76 @@ public class Player : MonoBehaviour
                 lineRenderer.startColor = Color.white;
                 lineRenderer.endColor = Color.white;
             }
+
+            //keep rotation at 0 if havent moved yet, otherwise set rotation so forward vector is at bottom of slime
+            if(!firstMove)
+            {
+                playerFacing.localRotation = Quaternion.Euler(0,0,0);
+            }
+            else
+            {
+                playerFacing.localRotation = Quaternion.Slerp(playerFacing.localRotation, Quaternion.Euler(-90, 0, 0), Time.deltaTime * 2f);
+            }
+            
         }
         // Player is moving state
         else
         {
+            // Play the dissolving sfx
+            if (timer > tempTime + timeToDie - dissolveTime && dissolvePlayed == false)
+            {
+                slimeDissolve.Play();
+                dissolvePlayed = true;
+            }
+
             // Check if the player is moving too long before hitting a block
             if (timer > tempTime + timeToDie)
             {
+                dissolvePlayed = false;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
+
+            playerFacing.localRotation = Quaternion.Slerp(playerFacing.localRotation, Quaternion.Euler(0, 0, 0), Time.deltaTime * 5f);
+
         }
 
+        Debug.Log(state);
         if (state == "Up") 
         {
             transform.Translate(upVector * speed * Time.deltaTime);
+            var roatateTo = Quaternion.LookRotation(upVector);
+            playerRot.rotation = Quaternion.Slerp(playerRot.rotation, roatateTo, Time.deltaTime * speed);
+
         }
         else if (state == "Down")
         {
             transform.Translate(downVector * speed * Time.deltaTime);
+            var roatateTo = Quaternion.LookRotation(downVector);
+            playerRot.rotation = Quaternion.Slerp(playerRot.rotation, roatateTo, Time.deltaTime * speed);
         }
         else if (state == "Right")
         {
             transform.Translate(rightVector * speed * Time.deltaTime);
+            var roatateTo = Quaternion.LookRotation(rightVector);
+            playerRot.rotation = Quaternion.Slerp(playerRot.rotation, roatateTo, Time.deltaTime * speed);
         }
         else if (state == "Left")
         {
             transform.Translate(leftVector * speed * Time.deltaTime);
+            var roatateTo = Quaternion.LookRotation(leftVector);
+            playerRot.rotation = Quaternion.Slerp(playerRot.rotation, roatateTo, Time.deltaTime * speed);
         }
         else if (state == "Back")
         {
             transform.Translate(backVector * speed * Time.deltaTime);
+            var roatateTo = Quaternion.LookRotation(backVector);
+            playerRot.rotation = Quaternion.Slerp(playerRot.rotation, roatateTo, Time.deltaTime * speed);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        slimeDissolve.Stop();
         switch (state)
         {
             case "Up":
@@ -128,6 +183,8 @@ public class Player : MonoBehaviour
         state = "Still";
         compass.SetActive(true);
         transform.position = new Vector3(MathF.Round(transform.position.x), MathF.Round(transform.position.y), MathF.Round(transform.position.z));
+
+        firstMove = true;
     }
     
     private void RotateVectors(Vector3 axis) {
