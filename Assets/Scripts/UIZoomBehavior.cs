@@ -7,13 +7,12 @@ public class UIZoomBehavior : MonoBehaviour
 {
 
     CinemachineBrain brain;
-    CinemachineVirtualCamera Vcam;
 
     float orthoSize = 5;
     private bool zoomedIn = true;
     private float speed = 4f;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         brain = Camera.main.GetComponent<CinemachineBrain>();
     }
@@ -21,8 +20,9 @@ public class UIZoomBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vcam = (brain.ActiveVirtualCamera as CinemachineStateDrivenCamera).LiveChild as CinemachineVirtualCamera;
-        Vcam.m_Lens.OrthographicSize = Mathf.MoveTowards(Vcam.m_Lens.OrthographicSize, orthoSize, speed * Time.deltaTime);
+        foreach(CinemachineVirtualCameraBase virtCam in ((brain.ActiveVirtualCamera as CinemachineStateDrivenCamera).ChildCameras)) {
+              (virtCam as CinemachineVirtualCamera).m_Lens.OrthographicSize = Mathf.MoveTowards((virtCam as CinemachineVirtualCamera).m_Lens.OrthographicSize, orthoSize, speed * Time.deltaTime);   
+        } 
     }
 
     public void zoomInOut()
