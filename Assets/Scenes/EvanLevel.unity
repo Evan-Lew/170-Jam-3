@@ -5971,6 +5971,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 366035634}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &367375229 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 9169540543867313430, guid: 458c4d905604be2449fa1a8432ed5fff,
+    type: 3}
+  m_PrefabInstance: {fileID: 616587453}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &368154580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11571,7 +11577,7 @@ PrefabInstance:
     - target: {fileID: 4098366926283473798, guid: 3c4c5ab197b83c94184708297ef927fe,
         type: 3}
       propertyPath: goal
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4098366926283473798, guid: 3c4c5ab197b83c94184708297ef927fe,
         type: 3}
@@ -23162,6 +23168,7 @@ MonoBehaviour:
   slimeLand: {fileID: 1758256759}
   slimeDeath: {fileID: 390510151}
   goalSfx: {fileID: 1649475173}
+  disappearSfx: {fileID: 367375229}
 --- !u!4 &1342647051
 Transform:
   m_ObjectHideFlags: 0

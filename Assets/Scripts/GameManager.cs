@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public AudioSource slimeLand;
     public AudioSource slimeDeath;
     public AudioSource goalSfx;
+    public AudioSource disappearSfx;
 
     public void playSlimeLand()
     {
@@ -31,6 +32,11 @@ public class GameManager : MonoBehaviour
     public void playGoalSfx()
     {
         goalSfx.Play();
+    }
+
+    public void playDisappearSfx()
+    {
+        disappearSfx.Play();
     }
     
     public void switchCubeStates() {

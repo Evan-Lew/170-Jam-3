@@ -155,6 +155,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        slimeDissolve.Stop();
         switch (state)
         {
             case "Up":

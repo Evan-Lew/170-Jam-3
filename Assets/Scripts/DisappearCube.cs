@@ -42,6 +42,7 @@ public class DisappearCube : MonoBehaviour
         
         if (disappearState)
         {
+            gameManager.playDisappearSfx();
             disappearUpdate = true;
             disappearCubeTimer = timer;
         }
