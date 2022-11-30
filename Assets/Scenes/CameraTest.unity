@@ -282,6 +282,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 456573969628874740, guid: c07b29166b6dec144951e73e654b62ac,
+        type: 3}
+      propertyPath: goal
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 456573969628874741, guid: c07b29166b6dec144951e73e654b62ac,
         type: 3}
       propertyPath: m_Name
@@ -1146,7 +1151,10 @@ MonoBehaviour:
   - {fileID: 919774029}
   disappearCubes: []
   killCubes: []
-  slimeJump: {fileID: 0}
+  slimeLand: {fileID: 0}
+  slimeDeath: {fileID: 0}
+  goalSfx: {fileID: 0}
+  disappearSfx: {fileID: 0}
 --- !u!4 &1342647051
 Transform:
   m_ObjectHideFlags: 0
@@ -1294,7 +1302,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 05298bfefc0ad414d8566eacf4d29b9b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
