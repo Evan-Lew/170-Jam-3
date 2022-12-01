@@ -12,15 +12,21 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 7e929fdbb0fac154d879f53fda0a3709
   - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: 08e21601945132c47aa6e55fa12d96ea
+  - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: 85cef466a2515f747a900a86e8dd303c
   - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: 1469f70b425b84442bf435cf389562a4
+  - enabled: 1
     path: Assets/Scenes/EvanLevel.unity
     guid: 577ed90420648bd4c9e72de2cd5fed11
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TestLevel.unity
     guid: 0b33bbefceacf8c4f8082ee2fb96fd17
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CameraTest.unity
     guid: ed7a3b1c2f5b09b48bbaa473110c439c
   m_configObjects: {}
