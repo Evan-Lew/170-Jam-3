@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level5.unity
     guid: 3e6c431d4af274747bcb11ef68e8a039
+  - enabled: 0
+    path: Assets/Scenes/Kai's Level.unity
+    guid: 019ced83e2b46464ab303d4bbee5b255
   - enabled: 1
     path: Assets/Scenes/FinalLevel.unity
     guid: 577ed90420648bd4c9e72de2cd5fed11
