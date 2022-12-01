@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 99c7a2da5f9b0ab478f20ae2ec3d4c7c, type: 2}
+  - {fileID: 2100000, guid: 490f390489f63674bbb71fb7a4788faa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,4 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75c445dfb96e34a4bb1c7491cd6b28ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  goal: 0
   state: 1
+  good: {fileID: 2100000, guid: 490f390489f63674bbb71fb7a4788faa, type: 2}
+  bad: {fileID: 2100000, guid: fe98d8b33a618594fa01e2e7be78714c, type: 2}

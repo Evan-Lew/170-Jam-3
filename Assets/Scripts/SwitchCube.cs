@@ -7,7 +7,10 @@ public class SwitchCube : MonoBehaviour
 {
     public GameManager gameManager;
     public bool goal;
-    public bool state;   
+    public bool state;
+
+    public Material good;
+    public Material bad;
 
     void Start()
     {
@@ -47,11 +50,11 @@ public class SwitchCube : MonoBehaviour
     {
         if (state)
         {
-            gameObject.GetComponent<Renderer>().material.color = Color.red;
+            gameObject.GetComponent<Renderer>().material = bad;
         }
         else
         {
-            gameObject.GetComponent<Renderer>().material.color = Color.white;
+            gameObject.GetComponent<Renderer>().material = good;
         }
     }
 }
