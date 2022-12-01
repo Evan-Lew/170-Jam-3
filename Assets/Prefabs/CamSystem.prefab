@@ -302,38 +302,46 @@ MonoBehaviour:
   m_AnimatedTarget: {fileID: 2575863462165788989}
   m_LayerIndex: 0
   m_ShowDebugText: 0
-  m_ChildCameras: []
+  m_ChildCameras:
+  - {fileID: 7075339922167192760}
+  - {fileID: 5637253539673786003}
+  - {fileID: 8065467023273727226}
+  - {fileID: 6238844171165980415}
+  - {fileID: 3442776724717119947}
+  - {fileID: 4175383537358103686}
+  - {fileID: 3994795593180943866}
+  - {fileID: 444087101035849565}
   m_Instructions:
   - m_FullHash: 1899948138
-    m_VirtualCamera: {fileID: 0}
+    m_VirtualCamera: {fileID: 7075339922167192760}
     m_ActivateAfter: 0
     m_MinDuration: 0
   - m_FullHash: -399001136
-    m_VirtualCamera: {fileID: 0}
+    m_VirtualCamera: {fileID: 5637253539673786003}
     m_ActivateAfter: 0
     m_MinDuration: 0
   - m_FullHash: -1624209082
-    m_VirtualCamera: {fileID: 0}
+    m_VirtualCamera: {fileID: 8065467023273727226}
     m_ActivateAfter: 0
     m_MinDuration: 0
   - m_FullHash: 22289637
-    m_VirtualCamera: {fileID: 0}
+    m_VirtualCamera: {fileID: 6238844171165980415}
     m_ActivateAfter: 0
     m_MinDuration: 0
   - m_FullHash: 1921371436
-    m_VirtualCamera: {fileID: 0}
+    m_VirtualCamera: {fileID: 3442776724717119947}
     m_ActivateAfter: 0
     m_MinDuration: 0
   - m_FullHash: -343106410
-    m_VirtualCamera: {fileID: 0}
+    m_VirtualCamera: {fileID: 4175383537358103686}
     m_ActivateAfter: 0
     m_MinDuration: 0
   - m_FullHash: -1668568064
-    m_VirtualCamera: {fileID: 0}
+    m_VirtualCamera: {fileID: 3994795593180943866}
     m_ActivateAfter: 0
     m_MinDuration: 0
   - m_FullHash: 49232291
-    m_VirtualCamera: {fileID: 0}
+    m_VirtualCamera: {fileID: 444087101035849565}
     m_ActivateAfter: 0
     m_MinDuration: 0
   m_DefaultBlend:
