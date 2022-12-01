@@ -118,11 +118,12 @@ public class Player : MonoBehaviour
             playerFacing.localRotation = Quaternion.Slerp(playerFacing.localRotation, Quaternion.Euler(0, 0, 0), Time.deltaTime * 5f);
 
         }
-        
+
         if (state == "Up") 
         {
             transform.Translate(upVector * speed * Time.deltaTime);
             var roatateTo = Quaternion.LookRotation(upVector);
+            gameManager.GetComponent<GameManager>().moveCubeVector = upVector;
             playerRot.rotation = Quaternion.Slerp(playerRot.rotation, roatateTo, Time.deltaTime * speed);
 
         }
@@ -130,24 +131,28 @@ public class Player : MonoBehaviour
         {
             transform.Translate(downVector * speed * Time.deltaTime);
             var roatateTo = Quaternion.LookRotation(downVector);
+            gameManager.GetComponent<GameManager>().GetComponent<GameManager>().moveCubeVector = downVector;
             playerRot.rotation = Quaternion.Slerp(playerRot.rotation, roatateTo, Time.deltaTime * speed);
         }
         else if (state == "Right")
         {
             transform.Translate(rightVector * speed * Time.deltaTime);
             var roatateTo = Quaternion.LookRotation(rightVector);
+            gameManager.GetComponent<GameManager>().moveCubeVector = rightVector;
             playerRot.rotation = Quaternion.Slerp(playerRot.rotation, roatateTo, Time.deltaTime * speed);
         }
         else if (state == "Left")
         {
             transform.Translate(leftVector * speed * Time.deltaTime);
             var roatateTo = Quaternion.LookRotation(leftVector);
+            gameManager.GetComponent<GameManager>().moveCubeVector = leftVector;
             playerRot.rotation = Quaternion.Slerp(playerRot.rotation, roatateTo, Time.deltaTime * speed);
         }
         else if (state == "Back")
         {
             transform.Translate(backVector * speed * Time.deltaTime);
             var roatateTo = Quaternion.LookRotation(backVector);
+            gameManager.GetComponent<GameManager>().moveCubeVector = backVector;
             playerRot.rotation = Quaternion.Slerp(playerRot.rotation, roatateTo, Time.deltaTime * speed);
         }
     }
