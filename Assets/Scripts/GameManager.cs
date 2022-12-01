@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] disappearCubes;
     public GameObject[] killCubes;
     public GoalCube goalCube;
+    public Vector3 moveCubeVector;
     public int neededKeys;
     
     // Global variables
@@ -31,7 +32,7 @@ public class GameManager : MonoBehaviour
             goalCube.goal = true;
         }
     }
-    
+
     public void playSlimeLand()
     {
         slimeLand.Play();
