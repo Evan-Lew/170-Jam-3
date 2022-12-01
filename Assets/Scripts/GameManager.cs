@@ -19,6 +19,11 @@ public class GameManager : MonoBehaviour
     public AudioSource goalSfx;
     public AudioSource disappearSfx;
 
+    private void Awake()
+    {
+        playerWon = false;
+    }
+    
     public void playSlimeLand()
     {
         slimeLand.Play();
