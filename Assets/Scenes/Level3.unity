@@ -1079,6 +1079,9 @@ MonoBehaviour:
   switchCubes: []
   disappearCubes: []
   killCubes: []
+  goalCube: {fileID: 0}
+  moveCubeVector: {x: 0, y: 0, z: 0}
+  neededKeys: 0
   slimeLand: {fileID: 1758256759}
   slimeDeath: {fileID: 390510151}
   goalSfx: {fileID: 1649475173}
@@ -1182,7 +1185,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390601052}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -50, y: -50, z: -50}
+  m_LocalPosition: {x: -50, y: -35, z: -50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1201,7 +1204,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4501cf4519c19d41a6598a42a697f9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
   killState: 1
 --- !u!1001 &1445293602
 PrefabInstance:
