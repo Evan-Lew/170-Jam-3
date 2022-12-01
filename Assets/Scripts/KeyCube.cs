@@ -4,26 +4,15 @@ using UnityEngine;
 
 public class KeyCube : MonoBehaviour
 {
-    public GoalCube goal;
-    public float keys = 0;
-    public float neededKeys = 1;
-    // Start is called before the first frame update
-    void Start()
+    private GameManager gameManager;
+    
+    void Start() 
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(keys >= neededKeys)
-        {
-            goal.goal = true;
-        }
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        keys += 1;
+        gameManager.keyCubeIncrement();
     }
 }

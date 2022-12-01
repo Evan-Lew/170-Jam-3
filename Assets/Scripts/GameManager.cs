@@ -5,9 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    private int keysCollected = 0;
+
     public GameObject[] switchCubes;
     public GameObject[] disappearCubes;
     public GameObject[] killCubes;
+    public GoalCube goalCube;
+    public int neededKeys;
     
     // Global variables
     static public bool playerAlive = true;
@@ -22,6 +26,10 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         playerWon = false;
+        if (keysCollected >= neededKeys)
+        {
+            goalCube.goal = true;
+        }
     }
     
     public void playSlimeLand()
@@ -44,10 +52,20 @@ public class GameManager : MonoBehaviour
         disappearSfx.Play();
     }
     
-    public void switchCubeStates() {
+    public void switchCubeStates()
+    {
         foreach (GameObject cube in switchCubes)
         {
             cube.GetComponent<SwitchCube>().switchState();
+        }
+    }
+
+    public void keyCubeIncrement()
+    {
+        keysCollected += 1;
+        if (keysCollected >= neededKeys)
+        {
+            goalCube.goal = true;
         }
     }
     

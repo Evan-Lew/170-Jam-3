@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KillCube : MonoBehaviour
 {
-    public GameManager gameManager;
+    private GameManager gameManager;
     public bool killState;   
 
     void Start()

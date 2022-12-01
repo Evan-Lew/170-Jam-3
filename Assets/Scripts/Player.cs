@@ -118,8 +118,7 @@ public class Player : MonoBehaviour
             playerFacing.localRotation = Quaternion.Slerp(playerFacing.localRotation, Quaternion.Euler(0, 0, 0), Time.deltaTime * 5f);
 
         }
-
-        Debug.Log(state);
+        
         if (state == "Up") 
         {
             transform.Translate(upVector * speed * Time.deltaTime);
